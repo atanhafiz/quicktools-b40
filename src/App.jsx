@@ -8,9 +8,10 @@ import HargaAlert from "./pages/HargaAlert.jsx";
 import KedaiExpress from "./pages/KedaiExpress.jsx";
 import Login from "./pages/Login.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
-import OrdersDashboard from "./pages/OrdersDashboard.jsx"; // 🆕 Orders
+import OrdersDashboard from "./pages/OrdersDashboard.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
-import ShopPublic from "./pages/ShopPublic.jsx"; // Public storefront
+import ShopPublic from "./pages/ShopPublic.jsx";
+import PromotionsHub from "./pages/PromotionsHub.jsx"; // 🆕
 
 export default function App() {
   return (
@@ -21,50 +22,14 @@ export default function App() {
           {/* Public */}
           <Route path="/" element={<Home />} />
           <Route path="/shop/:slug" element={<ShopPublic />} />
+          <Route path="/promosi" element={<PromotionsHub />} />
 
-          {/* Protected Dashboard */}
-          <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            }
-          />
-
-          {/* Protected Tools */}
-          <Route
-            path="/budget-tracker"
-            element={
-              <ProtectedRoute>
-                <BudgetTracker />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/harga-alert"
-            element={
-              <ProtectedRoute>
-                <HargaAlert />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/kedai-express"
-            element={
-              <ProtectedRoute>
-                <KedaiExpress />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/orders"
-            element={
-              <ProtectedRoute>
-                <OrdersDashboard />
-              </ProtectedRoute>
-            }
-          />
+          {/* Protected */}
+          <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          <Route path="/budget-tracker" element={<ProtectedRoute><BudgetTracker /></ProtectedRoute>} />
+          <Route path="/harga-alert" element={<ProtectedRoute><HargaAlert /></ProtectedRoute>} />
+          <Route path="/kedai-express" element={<ProtectedRoute><KedaiExpress /></ProtectedRoute>} />
+          <Route path="/orders" element={<ProtectedRoute><OrdersDashboard /></ProtectedRoute>} />
 
           {/* Auth */}
           <Route path="/login" element={<Login />} />
