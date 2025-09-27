@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🎨 Extra style util untuk consistent design */
+.container {
+  @apply max-w-7xl mx-auto px-4;
+}
+
+.section {
+  @apply py-14 md:py-20;
+}
+
+.card {
+  @apply bg-white rounded-2xl shadow-sm hover:shadow-md transition p-6;
+}
+
+.badge {
+  @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-brand-light text-brand;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold;
+}
+
+.btn-primary {
+  @apply bg-brand text-white hover:bg-brand-dark;
+}
+
+.btn-outline {
+  @apply border border-slate-300 hover:bg-slate-100;
+}
+
+.h1 {
+  @apply text-3xl md:text-5xl font-extrabold tracking-tight;
+}
+
+.p-muted {
+  @apply text-slate-600;
+}
